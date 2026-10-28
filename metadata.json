@@ -1,0 +1,8 @@
+{
+  "name": "HabitFlow - Mini Habit & Exercise Planner",
+  "description": "Track daily habits like water, sleep, and workouts, plan exercises for the next 2 weeks, and set customizable reminders with calendar integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

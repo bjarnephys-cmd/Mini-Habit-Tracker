@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile metadata",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "UserHabitBoard": {
+      "title": "UserHabitBoard",
+      "description": "Synced habit tracker board including daily logs, habits, exercises, and reminders",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "habits": { "type": "array" },
+        "logs": { "type": "object" },
+        "exercises": { "type": "array" },
+        "reminders": { "type": "array" }
+      },
+      "required": ["ownerId", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile document owned by userId"
+    },
+    "/users/{userId}/data/board": {
+      "schema": "UserHabitBoard",
+      "description": "Private habit board document synced for userId"
+    }
+  }
+}
